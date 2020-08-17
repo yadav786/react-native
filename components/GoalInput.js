@@ -10,13 +10,13 @@ export default function GoalInput(props){
     }
 
     const onAddGoal = () => {
-      setAddGoal(''); 
       props.onAddGoal(addgoal);
+      setAddGoal('');
     }
 
     const cancelNextGoal = () => {
-      setAddGoal('');
       props.onCancelGoal();
+      setAddGoal('');
     }
 
     return(
