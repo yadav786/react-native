@@ -1,5 +1,5 @@
 import React, {useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View,SafeAreaView } from 'react-native';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 
@@ -22,7 +22,7 @@ export default function App() {
  const [guessRounds, setGuessRounds] = useState(0);
  const [dataLoaded, setDataLoaded] = useState(false);
 
- if(!dataLoaded){
+ if(!dataLoaded){ 
    return <AppLoading startAsync={fetchFonts} onFinish={() => setDataLoaded(true)} onError={()=> console.log('error fonts') }/>
  }
 
@@ -50,10 +50,10 @@ export default function App() {
  }
 
   return (
-    <View style={styles.screen}>
+    <SafeAreaView  style={styles.screen}>
     <Header title="Guess a Number" />
     {content}
-    </View>
+    </SafeAreaView>
   );
 }
 
